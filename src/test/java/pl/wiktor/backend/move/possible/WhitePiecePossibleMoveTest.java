@@ -1,4 +1,4 @@
-package pl.wiktor.backend.moves.possible;
+package pl.wiktor.backend.move.possible;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -10,7 +10,7 @@ import pl.wiktor.backend.move.PossibleMoveFacade;
 import java.util.Set;
 
 @DisplayName("White piece possible moves tests")
-public class WhitePiecePossibleMoveTest extends PiecePossibleMoveTestTemplate {
+public class WhitePiecePossibleMoveTest extends FigurePossibleMoveTestTemplate {
 
     @DisplayName("White piece should move 1 field to the right up or left up")
     @Test

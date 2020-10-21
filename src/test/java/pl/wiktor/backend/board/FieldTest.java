@@ -1,14 +1,13 @@
 package pl.wiktor.backend.board;
 
-import org.junit.Assert;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import pl.wiktor.backend.player.PlayerType;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DisplayName("Field functionality tests")
 public class FieldTest {
@@ -179,5 +178,35 @@ public class FieldTest {
         assertEquals(betweenFourth, betweenFields.get(3));
         assertEquals(betweenFifth, betweenFields.get(4));
         assertEquals(betweenSixth, betweenFields.get(5));
+    }
+
+    @DisplayName("Distance between fields should properly return distance")
+    @Test
+    public void test09(){
+        //GIVEN
+        Field from = new Field(1,1);
+        Field to = new Field(4,4);
+        int expectedDistance = 3;
+
+        //WHEN
+        int actualDistance = from.distance(to);
+
+        //THEN
+        assertEquals(expectedDistance, actualDistance);
+    }
+
+    @DisplayName("Distance between fields should properly return distance reversed")
+    @Test
+    public void test10(){
+        //GIVEN
+        Field from = new Field(4,4);
+        Field to = new Field(1,1);
+        int expectedDistance = 3;
+
+        //WHEN
+        int actualDistance = from.distance(to);
+
+        //THEN
+        assertEquals(expectedDistance, actualDistance);
     }
 }

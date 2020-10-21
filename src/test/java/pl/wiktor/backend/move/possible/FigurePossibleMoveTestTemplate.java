@@ -1,8 +1,8 @@
-package pl.wiktor.backend.moves.possible;
+package pl.wiktor.backend.move.possible;
 
 import pl.wiktor.backend.board.Field;
 
-abstract class PiecePossibleMoveTestTemplate {
+abstract class FigurePossibleMoveTestTemplate {
     private int x;
     private int y;
 
