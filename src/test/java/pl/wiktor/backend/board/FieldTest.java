@@ -2,7 +2,6 @@ package pl.wiktor.backend.board;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import pl.wiktor.backend.player.PlayerType;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -208,5 +207,25 @@ public class FieldTest {
 
         //THEN
         assertEquals(expectedDistance, actualDistance);
+    }
+
+    @DisplayName("Between fields should return 1 properly field")
+    @Test
+    public void test11(){
+        //GIVEN
+        Field from = new Field(3,3);
+        Field to = new Field(1, 5);
+        Field fieldBetween = new Field(2, 4);
+        int expectedSize = 1;
+
+        //WHEN
+        List<Field> betweenFields = from.fieldsBetween(to).stream()
+                .sorted(Field::compareTo)
+                .collect(Collectors.toList());
+        int size = betweenFields.size();
+
+        //THEN
+        assertEquals(expectedSize, size);
+        assertEquals(fieldBetween, betweenFields.get(0));
     }
 }

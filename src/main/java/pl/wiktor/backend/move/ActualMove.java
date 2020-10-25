@@ -7,6 +7,8 @@ import pl.wiktor.backend.player.PlayerType;
 
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
+import java.util.Objects;
 
 //CHECKS IF PLAYER CAN MOVE TO TARGET FIELD
 public class ActualMove {
@@ -14,6 +16,8 @@ public class ActualMove {
     public static final int ONE_FIELD = 1;
 
     public static boolean checkIfCanMove(FieldView from, FieldView to, Map<Field, FieldView> board){
+        if(Objects.isNull(from) || Objects.isNull(from.getPlayerType()) ||  Objects.isNull(to))
+            throw new NoSuchElementException("'From' or 'To' is null");
         return validMove(from, to) && (canFreeMove(from, to) || canAttack(from, to, board));
     }
 

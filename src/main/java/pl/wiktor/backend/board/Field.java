@@ -36,8 +36,10 @@ public class Field implements Comparable<Field>{
         int x = this.x;
         int y = this.y;
 
-        if(this.compareTo(to) > 0) {
+        if(this.x > to.x) {
             x = to.x;
+        }
+        if(this.y > to.y) {
             y = to.y;
         }
 

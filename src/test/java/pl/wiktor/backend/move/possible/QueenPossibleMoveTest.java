@@ -3,12 +3,15 @@ package pl.wiktor.backend.move.possible;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pl.wiktor.backend.board.Field;
+import pl.wiktor.backend.move.FigureMoveTestTemplate;
 import pl.wiktor.backend.move.PossibleMoveFacade;
 
 import java.util.Set;
 
+// TODO: 25.10.2020 tests
 @DisplayName("Queen possible moves tests")
-public class QueenPossibleMoveTest extends FigurePossibleMoveTestTemplate {
+public class QueenPossibleMoveTest extends FigureMoveTestTemplate {
+
     @DisplayName("Queen should move 1 field to the right up, left up, left down, right down")
     @Test
     public void test01(){
@@ -23,6 +26,6 @@ public class QueenPossibleMoveTest extends FigurePossibleMoveTestTemplate {
         //WHEN
         Set<Field> possibleMoves = PossibleMoveFacade.queenMove().move(from);
 
-        System.out.println(possibleMoves);
+//        System.out.println(possibleMoves);
     }
 }

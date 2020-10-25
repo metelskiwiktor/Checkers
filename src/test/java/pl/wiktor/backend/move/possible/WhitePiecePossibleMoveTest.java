@@ -5,12 +5,13 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pl.wiktor.backend.board.Board;
 import pl.wiktor.backend.board.Field;
+import pl.wiktor.backend.move.FigureMoveTestTemplate;
 import pl.wiktor.backend.move.PossibleMoveFacade;
 
 import java.util.Set;
 
 @DisplayName("White piece possible moves tests")
-public class WhitePiecePossibleMoveTest extends FigurePossibleMoveTestTemplate {
+public class WhitePiecePossibleMoveTest extends FigureMoveTestTemplate {
 
     @DisplayName("White piece should move 1 field to the right up or left up")
     @Test
